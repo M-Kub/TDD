@@ -58,7 +58,6 @@ class NewVisitorTest(LiveServerTestCase):
         # The page updates again, and now shows both items on her list
         self.wait_for_row_in_list_table('1: Buy peacock feathers')
         self.wait_for_row_in_list_table('2: Use peacock feathers to make a fly')
-        self.fail('Finsh the test!')
 
     def test_multiple_users_can_start_lists_at_different_urls(self):
         #Edith starts a new to-do list
@@ -91,7 +90,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.wait_for_row_in_list_table('1: Buy milk')
 
         #Francis gets his own unique URL
-        francus_list_url = self.browser.current_url
+        francis_list_url = self.browser.current_url
         self.assertRegex(francis_list_url, '/lists/.+')
         self.assertNotEqual(francis_list_url, edith_list_url)
 
